@@ -1,7 +1,12 @@
-function isAdult(birthday) {
-  let now = Date.now();
-  let converedBD = new Date(birthday);
-  let age = (now - converedBD) / (1000 * 60 * 60 * 24 * 365);
+function isAdult(date) {
+  const today = new Date();
+  let birthDate = new Date(date);
+  let age = today.getFullYear() - birthDate.getFullYear();
 
-  return Number(age.toFixed(1)) > 18;
+  if (today.getMonth() < birthDate.getMonth() ||
+      (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+
+  return age;
 }
