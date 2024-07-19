@@ -47,8 +47,6 @@ function plurSec(num, time) {
 function renderTimer(data) {
 
   let obj = getTimeForDate(data);
-
-  const div = document.querySelector('.timer1');
   const timerWrapper = document.querySelector('.timer__wrapper');
 
   let timer =

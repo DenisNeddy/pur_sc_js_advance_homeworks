@@ -30,6 +30,7 @@ Elf.prototype.constructor = Elf;
 Elf.prototype.setSpell = function() {
   console.log(`Зелье ${this.spell} приготовлено`);
 };
+
 Elf.prototype.useSpell = function() {
   console.log(`Зелье ${this.spell} использовано`);
 }
