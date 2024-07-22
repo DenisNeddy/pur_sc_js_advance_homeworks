@@ -1,4 +1,28 @@
 
+ const page = {
+  'month': {
+    value: document.querySelector('.timer__month > .timer__count'),
+    text: document.querySelector('.timer__month > .timer__description')
+  },
+  'days': {
+    value: document.querySelector('.timer__days > .timer__count'),
+    text: document.querySelector('.timer__days > .timer__description')
+  },
+  'hours': {
+    value: document.querySelector('.timer__hours > .timer__count'),
+    text: document.querySelector('.timer__hours > .timer__description')
+  },
+  'min': {
+    value: document.querySelector('.timer__minutes > .timer__count'),
+    text: document.querySelector('.timer__minutes > .timer__description')
+  },
+  'sec': {
+    value: document.querySelector('.timer__seconds > .timer__count'),
+    text: document.querySelector('.timer__seconds > .timer__description')
+  },
+}
+
+
 function getTimeForDate(endtime) {
   let end = Date.parse(endtime) - Date.parse(new Date());
   const second = Math.floor(end / 1000);
@@ -40,28 +64,7 @@ function plurSec(num, time) {
 }
 
 function renderTimer(time) {
-  const page = {
-    'month': {
-      value: document.querySelector('.timer__month > .timer__count'),
-      text: document.querySelector('.timer__month > .timer__description')
-    },
-    'days': {
-      value: document.querySelector('.timer__days > .timer__count'),
-      text: document.querySelector('.timer__days > .timer__description')
-    },
-    'hours': {
-      value: document.querySelector('.timer__hours > .timer__count'),
-      text: document.querySelector('.timer__hours > .timer__description')
-    },
-    'min': {
-      value: document.querySelector('.timer__minutes > .timer__count'),
-      text: document.querySelector('.timer__minutes > .timer__description')
-    },
-    'sec': {
-      value: document.querySelector('.timer__seconds > .timer__count'),
-      text: document.querySelector('.timer__seconds > .timer__description')
-    },
-  }
+
   const data = getTimeForDate(time);
 
   Object.entries(data).map(([key, value]) => {
