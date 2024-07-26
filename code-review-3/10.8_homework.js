@@ -1,32 +1,39 @@
 class Billing {
-  amount = 1;
+  #amount = 1000;
 
   calculateTotal() {
+    return this.#amount;
   }
 }
 
 class fixBilling extends Billing {
-  calculateTotal() {
-    return this.amount;
+  constructor() {
+    super();
   }
 }
 
 class hourBilling extends Billing {
+  #hour;
+
   constructor(hour) {
-    this.hour = hour;
+    super();
+    this.#hour = hour;
   }
 
   calculateTotal() {
-    return amount *= this.hour;
+    return super.calculateTotal() * this.#hour;
   }
 }
 
 class itemBilling extends Billing {
+  #items;
+
   constructor(items) {
-    this.items = items;
+    super();
+    this.#items = items;
   }
   
   calculateTotal() {
-    return amount * items.length;
+    return super.calculateTotal() * this.#items.length;
   }
 }
